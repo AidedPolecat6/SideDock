@@ -1,0 +1,11 @@
+﻿<Application x:Class="SideDock.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:converters="clr-namespace:SideDock.Converters"
+             ShutdownMode="OnExplicitShutdown">
+    <Application.Resources>
+        <converters:PathIconConverter x:Key="PathIconConverter" />
+        <converters:ColorBrushConverter x:Key="ColorBrushConverter" />
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+    </Application.Resources>
+</Application>

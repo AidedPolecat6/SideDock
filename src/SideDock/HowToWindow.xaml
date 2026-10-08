@@ -1,0 +1,59 @@
+<Window x:Class="SideDock.HowToWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="How to use SideDock"
+        Width="620"
+        Height="720"
+        MinWidth="480"
+        MinHeight="520"
+        WindowStartupLocation="CenterScreen"
+        Background="#181818"
+        Foreground="#F0EEE8"
+        ShowInTaskbar="True">
+    <Window.Resources>
+        <Style x:Key="StepTitle" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="17" />
+            <Setter Property="FontWeight" Value="SemiBold" />
+            <Setter Property="Margin" Value="0,22,0,6" />
+        </Style>
+        <Style x:Key="Body" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="13" />
+            <Setter Property="LineHeight" Value="21" />
+            <Setter Property="TextWrapping" Value="Wrap" />
+            <Setter Property="Foreground" Value="#D8D4CB" />
+        </Style>
+    </Window.Resources>
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+        <StackPanel Margin="34,28,34,36">
+            <TextBlock Text="SIDEDOCK" FontSize="11" FontWeight="SemiBold" Foreground="#D8D4CB" />
+            <TextBlock Text="How to use" FontSize="30" FontWeight="SemiBold" Margin="0,3,0,4" />
+            <TextBlock Style="{StaticResource Body}"
+                       Text="SideDock mirrors shortcuts and folders in a drawer at the right edge of your screen." />
+
+            <TextBlock Style="{StaticResource StepTitle}" Text="1. Open the drawer" />
+            <TextBlock Style="{StaticResource Body}"
+                       Text="Hover over or click the SideDock handle. You can also press Ctrl+Alt+Space. Select PIN if you want the drawer to remain open." />
+
+            <TextBlock Style="{StaticResource StepTitle}" Text="2. Add a folder tab" />
+            <TextBlock Style="{StaticResource Body}"
+                       Text="Create a Windows shortcut to the folder you want, then move that .lnk file into C:\tools\SideDock shortcuts. Rename the shortcut to change the tab name. SideDock detects it automatically and shows the folder's direct contents as a read-only linked tab." />
+
+            <TextBlock Style="{StaticResource StepTitle}" Text="3. Choose tiles or full-width rows" />
+            <TextBlock Style="{StaticResource Body}"
+                       Text="Select a tab, open the three-dot menu, and check Full-width rows for this tab. Each file or folder then gets its own row, and long names wrap instead of being shortened. The setting is saved separately for every tab." />
+
+            <TextBlock Style="{StaticResource StepTitle}" Text="4. Add or remove items" />
+            <TextBlock Style="{StaticResource Body}"
+                       Text="Linked tabs follow their target folder, so add or remove files in that folder. On an existing managed tab, drop files, folders, shortcuts, or website addresses onto SideDock. Select EDIT to show the remove buttons and enable rearranging." />
+
+            <TextBlock Style="{StaticResource StepTitle}" Text="5. Rename a tab" />
+            <TextBlock Style="{StaticResource Body}"
+                       Text="Select EDIT, then double-click the tab name. Renaming a linked tab renames only its descriptor shortcut; it does not rename the target folder." />
+
+            <TextBlock Style="{StaticResource StepTitle}" Text="6. Remove a tab" />
+            <TextBlock Style="{StaticResource Body}"
+                       Text="Select EDIT, choose the tab, then open the three-dot menu and select Remove current tab. Removing a linked tab deletes only its descriptor shortcut, never the target folder. Managed tabs ask whether their backing folder should also be deleted." />
+        </StackPanel>
+    </ScrollViewer>
+</Window>
