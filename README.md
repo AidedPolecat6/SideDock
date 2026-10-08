@@ -1,40 +1,66 @@
-# SideDock
+<p align="center">
+  <img src="assets/sidedock.svg" width="150" alt="SideDock icon">
+</p>
 
-SideDock is a lightweight Windows 11 edge drawer for applications, files, folders, websites, and shortcuts. It is built with C#/.NET 8, WPF, and native Windows APIs.
+<h1 align="center">SideDock</h1>
 
-## Features
+<p align="center">
+  A fast, translucent Windows edge drawer for the files and folders you reach for every day.
+</p>
 
-- Opens from a right-edge handle or `Ctrl+Alt+Space`.
-- Displays shortcuts as tiles or per-tab full-width rows.
-- Uses crisp vector icons for folders and PDFs, including PDF shortcuts.
-- Mirrors linked folders without modifying their contents.
-- Browses folders through cascading menus.
-- Supports drag-and-drop, editing, pinning, and startup with Windows.
-- Watches shortcut folders and refreshes automatically.
+<p align="center">
+  <a href="https://github.com/AidedPolecat6/SideDock/actions/workflows/build.yml"><img src="https://github.com/AidedPolecat6/SideDock/actions/workflows/build.yml/badge.svg" alt="Build status"></a>
+  <a href="https://github.com/AidedPolecat6/SideDock/releases/latest"><img src="https://img.shields.io/github/v/release/AidedPolecat6/SideDock?display_name=tag&sort=semver" alt="Latest release"></a>
+  <img src="https://img.shields.io/badge/platform-Windows_10%2F11-0078D4" alt="Windows 10 and 11">
+  <img src="https://img.shields.io/badge/.NET-8.0-512BD4" alt=".NET 8">
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-GPL--3.0-4c1" alt="GPL-3.0 license"></a>
+</p>
 
-## Install
+<p align="center">
+  <img src="assets/screenshot.png" width="460" alt="SideDock displaying an anonymized demo workspace">
+</p>
 
-1. Open the repository's **Releases** page.
-2. Download `SideDock.exe` from the latest release.
-3. Install the [.NET 8 Desktop Runtime](https://dotnet.microsoft.com/download/dotnet/8.0) if it is not already installed.
-4. Place the executable in a permanent folder and run it.
+## Why SideDock?
 
-The repository and its release downloads are private. A GitHub account with repository access is required.
+SideDock stays hidden on the right edge of your screen until you need it. Hover over the handle or press `Ctrl+Alt+Space`, launch what you need, and let the drawer disappear again.
 
-## Use
+| | |
+|---|---|
+| **Folder-native tabs** | Add a folder shortcut and SideDock mirrors its direct contents without changing the target folder. |
+| **Two layouts** | Use compact tiles or full-width rows with wrapped names, saved independently for each tab. |
+| **Fast navigation** | Browse folders through lazy cascading menus without opening a new Explorer window. |
+| **Windows integration** | Native shell icons, global hotkey, monitor-aware positioning, startup support, and outside-click closing. |
+| **Built for focus** | Pin when needed, edit only when unlocked, and keep the desktop clear the rest of the time. |
 
-- Hover over or click the handle in the middle of the right screen edge.
-- Press `Ctrl+Alt+Space` to open or close the drawer.
-- Select **PIN** to keep the drawer open.
-- Select **EDIT** to reorder or remove tiles, or double-click a tab name to rename it.
-- Open the `...` menu for startup, layout, folder, help, and exit options.
-- Select **How to use** for the built-in step-by-step guide.
+## Download
 
-To add a linked folder tab, create a Windows shortcut to the folder and move the `.lnk` file into `C:\tools\SideDock shortcuts`. SideDock detects it automatically and displays the folder's direct contents as a read-only tab.
+1. Download `SideDock.exe` from the [latest release](https://github.com/AidedPolecat6/SideDock/releases/latest).
+2. Install the [.NET 8 Desktop Runtime](https://dotnet.microsoft.com/download/dotnet/8.0) if Windows does not already have it.
+3. Put the executable in a permanent folder and run it.
 
-For long filenames, select the tab and enable **Full-width rows for this tab** in the `...` menu. The setting is saved separately for each tab.
+SideDock currently targets Windows x64. It runs without administrator privileges.
 
-Configuration is stored in `%LOCALAPPDATA%\SideDock\config.json`, with an automatic backup at `config.backup.json`.
+## Quick Start
+
+1. Hover over or click the handle at the middle of the right screen edge.
+2. Create a Windows shortcut to a folder you want as a tab.
+3. Move the `.lnk` into `C:\tools\SideDock shortcuts`.
+4. SideDock detects the shortcut and creates a read-only linked tab automatically.
+
+Linked tabs never modify the target folder. Removing one deletes only its descriptor shortcut after confirmation.
+
+## Controls
+
+| Action | Control |
+|---|---|
+| Open or close | Hover the edge handle, click it, or press `Ctrl+Alt+Space` |
+| Keep open | Select **PIN** |
+| Rename or rearrange | Select **EDIT** |
+| Show long filenames | Enable **Full-width rows for this tab** in the `...` menu |
+| Refresh a tab | Select **Refresh current tab folder** in the `...` menu |
+| Learn the workflows | Select **How to use** in the `...` menu |
+
+Configuration is stored in `%LOCALAPPDATA%\SideDock\config.json` with an automatic backup at `config.backup.json`.
 
 ## Development
 
@@ -45,8 +71,14 @@ dotnet test .\SideDock.sln --configuration Release
 dotnet publish .\src\SideDock\SideDock.csproj --configuration Release --runtime win-x64 --self-contained false --output .\publish\win-x64 -p:PublishSingleFile=true
 ```
 
-Generated output under `bin`, `obj`, and `publish` is intentionally excluded from version control. Release executables belong in GitHub Releases, not in the repository.
+SideDock uses C#/.NET 8, WPF, and native Windows APIs. Generated output under `bin`, `obj`, and `publish` is intentionally excluded from version control.
+
+## Roadmap
+
+- First-run folder selection wizard.
+- Fully portable, self-contained release.
+- Configurable shortcuts location.
 
 ## License
 
-SideDock is licensed under the GNU General Public License v3.0. See `LICENSE` for the complete terms.
+SideDock is licensed under the [GNU General Public License v3.0](LICENSE).

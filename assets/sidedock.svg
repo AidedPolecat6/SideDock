@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">SideDock</title>
+  <desc id="desc">A dark glass drawer with a pearl edge and amber pull tab.</desc>
+  <defs>
+    <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#4a4a4a"/>
+      <stop offset="0.48" stop-color="#171717"/>
+      <stop offset="1" stop-color="#303030"/>
+    </linearGradient>
+    <linearGradient id="rim" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f0eee8"/>
+      <stop offset="0.5" stop-color="#77736c"/>
+      <stop offset="1" stop-color="#c8c5be"/>
+    </linearGradient>
+    <linearGradient id="tab" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffdc66"/>
+      <stop offset="1" stop-color="#d99b16"/>
+    </linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="170%" height="170%">
+      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#000" flood-opacity=".42"/>
+    </filter>
+  </defs>
+  <g filter="url(#shadow)">
+    <rect x="78" y="52" width="326" height="408" rx="78" fill="url(#panel)" stroke="#77736c" stroke-width="4"/>
+    <path d="M136 78h190c31 0 56 25 56 56v22" fill="none" stroke="#fff" stroke-opacity=".18" stroke-width="7" stroke-linecap="round"/>
+    <rect x="348" y="58" width="48" height="396" rx="24" fill="url(#rim)"/>
+    <rect x="369" y="175" width="76" height="162" rx="34" fill="url(#tab)" stroke="#fff3a6" stroke-width="4"/>
+    <path d="M408 218l-29 38 29 38" fill="none" stroke="#4c3505" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="142" cy="142" r="20" fill="#f0eee8" opacity=".9"/>
+    <rect x="178" y="125" width="112" height="16" rx="8" fill="#f0eee8" opacity=".76"/>
+    <rect x="178" y="151" width="72" height="10" rx="5" fill="#aaa8a2" opacity=".66"/>
+    <rect x="112" y="218" width="202" height="58" rx="20" fill="#fff" fill-opacity=".08" stroke="#fff" stroke-opacity=".18" stroke-width="3"/>
+    <rect x="112" y="294" width="202" height="58" rx="20" fill="#fff" fill-opacity=".055" stroke="#fff" stroke-opacity=".13" stroke-width="3"/>
+  </g>
+</svg>
